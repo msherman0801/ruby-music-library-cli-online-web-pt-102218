@@ -44,8 +44,10 @@ class Song
     end
   end
   
-  def self.new_from_filename(file)
-    self.find_or_create_by_name(file.split(' - ')[1])
+  def self.new_from_filename(param)
+    file = param.split(' - ')
+    song = Song.new(file[1], Artist.find_or_create_by_name(file[0]),Genre.find_or_create_by_name(file[2][0..-5]))
+    song
   end
   
   def save
