@@ -18,6 +18,12 @@ class MusicImporter
     }
     @@files.uniq
   end
+  
+  def import 
+    files.each do |i|
+      Song.create_from_filename(i)
+    end
+  end
     
   
 end
