@@ -4,7 +4,6 @@ class MusicLibraryController
   def initialize(path='./db/mp3s')
     @files = MusicImporter.new(path)
     @files = @files.import
-    binding.pry
   end
   
   def call 
@@ -25,7 +24,13 @@ class MusicLibraryController
   end
   
   def list_songs
-    
+    @files.sort.each_with_index do |e,i|
+      el = e.split(' - ').sort
+      puts "#{i+1}. #{e[0..-5]}" 
+    end
+    # Song.all.each_with_index do |e,i|
+    #   puts "#{i+1}. #{e}"
+    # end
   end
   
   
