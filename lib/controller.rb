@@ -1,8 +1,10 @@
+require 'pry'
 class MusicLibraryController
   
   def initialize(path='./db/mp3s')
-    files = MusicImporter.new(path)
-    files.import
+    @files = MusicImporter.new(path)
+    @files = @files.import
+    binding.pry
   end
   
   def call 
@@ -21,5 +23,11 @@ class MusicLibraryController
       response = gets.chomp 
     end
   end
+  
+  def list_songs
+    
+  end
+  
+  
   
 end
