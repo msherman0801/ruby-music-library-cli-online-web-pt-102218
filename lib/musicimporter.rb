@@ -9,14 +9,12 @@ class MusicImporter
   end
   
   def files
-    out = Dir.entries(@path).collect {|i| 
-      if i.split('').last(4).join() == '.mp3'
-        @@files << i
-      else 
-        false
+    files = Dir.entries(@path)
+    files.map { |song|
+      if song.split('').last(4) == ('.mp3').split('') && song != nil
+        song
       end
-    }
-    @@files.uniq
+    }.uniq.reject {|i| i == nil}
   end
   
   def import 
