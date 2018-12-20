@@ -15,6 +15,7 @@ class MusicImporter
         song
       end
     }.uniq.reject {|i| i == nil}
+    binding.pry
   end
   
   def import 
