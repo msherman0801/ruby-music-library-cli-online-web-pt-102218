@@ -14,7 +14,7 @@ class MusicImporter
       if song.split('').last(4) == ('.mp3').split('') && song != nil
         song
       end
-    }.uniq
+    }.uniq.reject {|i| i == nil}
   end
   
   def import 
