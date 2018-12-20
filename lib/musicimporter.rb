@@ -10,7 +10,7 @@ class MusicImporter
   
   def files
     files = Dir.entries(@path)
-    files.map { |song|
+    out = files.map { |song|
       if song.split('').last(4) == ('.mp3').split('') && song != nil
         song
       end
