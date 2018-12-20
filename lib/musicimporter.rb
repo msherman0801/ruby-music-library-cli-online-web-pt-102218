@@ -14,7 +14,6 @@ class MusicImporter
       if song.split('').last(4) == ('.mp3').split('') && song != nil
         song
       end
-      binding.pry
     }.uniq.reject {|i| i == nil}
   end
   
