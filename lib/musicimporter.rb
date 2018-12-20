@@ -11,7 +11,7 @@ class MusicImporter
   def files
     files = Dir.entries(@path)
     out = files.map { |song|
-      if song.split('').last(4) == ('.mp3').split('') && song != nil
+      if song.split('').last(4) == ('.mp3').split('')
         song
       end
     }.uniq.reject {|i| i == nil}
